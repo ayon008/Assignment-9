@@ -4,9 +4,9 @@ const AppliedJob = ({ appliedJob }) => {
     const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary, job_description } = appliedJob;
     return (
         <div className='p-5 rounded-lg mt-5' style={{ border: '1px solid #E8E8E8' }}>
-            <div className="card card-side bg-base-100">
-                <figure className="bg-[#F4F4F4] rounded-none py-3 px-5 h-[220px] w-[220px]"><img src={logo} alt="Movie" /></figure>
-                <div className="card-body">
+            <div className="card card-side bg-base-100 flex md:flex-row flex-col ">
+                <figure className="bg-[#F4F4F4] rounded-none py-3 px-5 h-[220px] w-[220px]"><img className='' src={logo} alt="Movie" /></figure>
+                <div className="card-body md:ps-6 ps-0">
                     <h2 className="card-title">{job_title}</h2>
                     <p>{company_name}</p>
                     <div className='flex items-center gap-3 mt-3'>

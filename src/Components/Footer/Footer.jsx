@@ -4,7 +4,7 @@ import logo1 from '../../assets/icons/social.png'
 const Footer = () => {
     return (
         <div className='bg-black mt-20 py-16'>
-            <div className='max-w-[90%] mx-auto grid grid-cols-5 gap-14'>
+            <div className='max-w-[90%] mx-auto grid md:grid-cols-5 grid-cols-2 gap-14'>
                 <div className='text-white'>
                     <h3 className='text-2xl'>Career Hub</h3>
                     <p className='my-7' style={{ color: 'rgba(255, 255, 255, 0.70)' }}>There are many variations of passages of Lorem Ipsum , but the majority have suffered alteration in some form.</p>

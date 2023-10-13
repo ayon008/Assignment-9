@@ -12,6 +12,7 @@ import JobDetails from './Components/JobDetails/JobDetails.jsx';
 import JobDescription from './Components/JobDescriptions/JobDescription.jsx';
 import AllJobs from './Components/AllJobs/AllJobs.jsx';
 import Footer from './Components/Footer/Footer.jsx';
+import Statistics from './Components/Statistics/Statistics.jsx';
 
 
 const router = createBrowserRouter([
@@ -38,10 +39,16 @@ const router = createBrowserRouter([
         path: "/jobs",
         element: <AllJobs></AllJobs>,
         loader: () => fetch('jobs.json')
-      },
+      }
+    ]
+  },
+  {
+    path: "/stat",
+    element: <JobDetails><h3 className='h-fit w-fit text-2xl font-semibold'>Statistics</h3></JobDetails>,
+    children: [
       {
-        path: "/jobs",
-        element: <Footer></Footer>
+        path: "/stat",
+        element: <Statistics></Statistics>
       }
     ]
   }

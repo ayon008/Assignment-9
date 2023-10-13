@@ -22,7 +22,7 @@ const Jobs = () => {
                 <h1 className='text-5xl font-semibold'>Featured Jobs</h1>
                 <p className='text-[#757575] text-base my-4'>Explore thousands of job opportunities with all the information you need. Its your future</p>
             </div>
-            <div className='mt-7 grid grid-cols-2 gap-3'>
+            <div className='mt-7 grid md:grid-cols-2 grid-cols-1 gap-3'>
                 {
                     lessJobs.map(job => <Job key={job.id} job={job}></Job>)
                 }
