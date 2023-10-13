@@ -21,7 +21,7 @@ const Job = ({ job }) => {
                 <h3 className='text-base font-semibold'>{job_title}</h3>
                 <p className='text-[#757575] text-sm mt-2'>{company_name}</p>
                 <div className='flex items-center gap-3 mt-3'>
-                    <button className='text-[#7E90FE] px-5 py-2 rounded-md font-semibold' style={{ border: '2px solid #7E90FE' }}>Full Time</button>
+                    <button className='text-[#7E90FE] px-5 py-2 rounded-md font-semibold' style={{ border: '2px solid #7E90FE' }}>{job_type}</button>
                     <button className='text-[#7E90FE] px-5 py-2 rounded-md font-semibold' style={{ border: '2px solid #7E90FE' }}>{remote_or_onsite}</button>
                 </div>
                 <div className='flex gap-3 items-center text-[#757575] mt-3'>

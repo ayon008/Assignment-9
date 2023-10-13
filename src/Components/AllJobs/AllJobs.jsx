@@ -15,12 +15,39 @@ const AllJobs = () => {
             }
         }
         setAppliedJobs(savedJobs);
-    }, [data])
+    }, [data]);
+
+    const [filterJobs, setFilterJobs] = useState([]);
+    
+    useEffect(() => {
+        setFilterJobs(appliedJobs)
+    }, [appliedJobs])
+
+    const handler = (e) => {
+        const value = e.target.value;
+        if (value === 'remote') {
+            const remotes = appliedJobs.filter(apj => apj.remote_or_onsite === 'Remote');
+            setFilterJobs(remotes)
+        }
+        else if (value === 'onsite') {
+            const onSites = appliedJobs.filter(apj => apj.remote_or_onsite === 'Onsite');
+            setFilterJobs(onSites)
+        }
+    }
     return (
-        <div className='pb-10'>
-            {
-                appliedJobs.map(appliedJob => <AppliedJob appliedJob={appliedJob} key={appliedJob.id}></AppliedJob>)
-            }
+        <div>
+            <div className='mt-5 w-fit ms-auto'>
+                <select name="" id="" onChange={handler}>
+                    <option value="" disabled selected>Filter By</option>
+                    <option value="remote">Remote</option>
+                    <option value="onsite">OnSite</option>
+                </select>
+            </div>
+            <div className='pb-10'>
+                {
+                    filterJobs.map(appliedJob => <AppliedJob appliedJob={appliedJob} key={appliedJob.id}></AppliedJob>)
+                }
+            </div>
         </div>
     );
 };
